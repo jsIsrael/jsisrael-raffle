@@ -9,20 +9,21 @@ angular.module('jsisraelRaffle', ['ngAnimate', 'ngSanitize', 'ngRoute', 'ngMater
   .controller('RaffleCtrl', RaffleCtrl)
   .service('RaffleService', RaffleService)
 
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'app/add/add.tpl.html',
-        controller: 'AddCtrl',
-        controllerAs: 'vm'
-      })
-      .when('/raffle', {
-        templateUrl: 'app/raffle/raffle.tpl.html',
-        controller: 'RaffleCtrl',
-        controllerAs: 'vm'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  })
+  .config(function ($routeProvider, $locationProvider) {
+            $routeProvider
+              .when('/', {
+                templateUrl: 'app/add/add.tpl.html',
+                controller: 'AddCtrl',
+                controllerAs: 'vm'
+              })
+              .when('/raffle', {
+                templateUrl: 'app/raffle/raffle.tpl.html',
+                controller: 'RaffleCtrl',
+                controllerAs: 'vm'
+              })
+              .otherwise({
+                redirectTo: '/'
+              });
+            $locationProvider.html5Mode(true);
+          })
 ;
