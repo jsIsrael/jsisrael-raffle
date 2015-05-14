@@ -8,6 +8,8 @@ CURRENT_COMMIT=`git rev-parse HEAD`
 ORIGIN_URL=`git config --get remote.origin.url`
 ORIGIN_URL_WITH_CREDENTIALS=${ORIGIN_URL/\/\/github.com/\/\/$GITHUB_TOKEN@github.com}
 
+
+echo -e "Creating Temp"
 mkdir $TEMP_DIRECTORY || exit 1
 cp -r $DIST_DIRECTORY/* $TEMP_DIRECTORY || exit 1
 cp .gitignore $TEMP_DIRECTORY || exit 1
