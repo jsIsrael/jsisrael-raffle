@@ -5,6 +5,7 @@ before_script:
 - npm install -g bower gulp
 - bower install
 - npm install
+- chmod +x ./deploy.sh
 script: gulp build
 after_success: ./deploy.sh
 env:
