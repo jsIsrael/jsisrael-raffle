@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-    <base href="/">
-
     <!-- build:css({.tmp/serve,src}) styles/vendor.css -->
     <link rel="stylesheet" href="app/vendor.css">
     <!-- bower:css -->
@@ -27,11 +25,12 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <md-button href="/">Add</md-button>
-    <md-button href="/raffle">Raffle</md-button>
+    <!--<md-button href="/">Add</md-button>-->
+    <!--<md-button href="/raffle">Raffle</md-button>-->
 
-    <div ng-view></div>
+    <!--<div ng-view></div>-->
 
+    <div ng-include="'app/main.tpl.html'"></div>
 
     <!-- build:js(src) scripts/vendor.js -->
     <!-- bower:js -->

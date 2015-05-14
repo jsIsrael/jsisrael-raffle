@@ -1,0 +1,74 @@
+<div ng-controller="AddCtrl as vm">
+  <md-content class="md-padding">
+    <md-tabs md-dynamic-height md-border-bottom>
+
+
+      <md-tab label="Add" >
+        <md-content class="md-padding">
+
+          <h1 class="md-display-2">Add</h1>
+
+          <div layout="vertical" layout-fill layout-align="center center">
+
+            <md-content layout-padding>
+              <md-card>
+                <md-input-container>
+                  <label>Paste here the full names separated by new lines</label>
+                  <textarea name="people" ng-model="vm.peopleInput"></textarea>
+                </md-input-container>
+              </md-card>
+
+              <md-button class="md-raised md-primary" ng-click="vm.addPeople()">ADD</md-button>
+
+              <h2 ng-show="vm.RaffleService.raffleNames.length">Raffle Pool</h2>
+
+              <div ng-repeat="raffleName in vm.RaffleService.raffleNames">
+                <button ng-click="vm.removeDude($index)">X</button>
+                {{ raffleName }}
+              </div>
+            </md-content>
+          </div>
+        </md-content>
+
+      </md-tab>
+
+      <md-tab label="Raffle">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">Raffle</h1>
+
+          <div layout="vertical" layout-fill layout-align="center center" ng-controller="RaffleCtrl as vm">
+
+            <md-content layout-padding>
+
+              <div layout-align="center" layout-fill layout="vertical">
+                <md-button class="md-raised md-primary" ng-click="vm.startRaffle()">START</md-button>
+              </div>
+
+              <md-card ng-show="vm.selectedName">
+                <md-card-content>
+                  <h1>{{vm.selectedName}}</h1>
+                </md-card-content>
+              </md-card>
+
+
+              <md-card ng-show="vm.RaffleService.winners.length">
+                <md-card-content>
+                  <div class="winnersBox">
+
+                    <h1>Winners</h1>
+                    <md-divider></md-divider>
+
+                    <h2 ng-repeat="name in vm.RaffleService.winners" class="winner">{{name}}</h2>
+
+                  </div>
+                </md-card-content>
+              </md-card>
+            </md-content>
+          </div>
+
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
+  </md-content>
+</div>

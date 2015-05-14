@@ -42,11 +42,11 @@ class RaffleCtrl {
       timeSoFar += speed;
       this.waitAndChangeName(speed);
     } else {
-      $scope.$apply( () => {
+      //$scope.$apply( () => {
         this.RaffleService.winners.push(this.selectedName);
 
         this.RaffleService.raffleNames.splice(selectedIndex, 1);
-      })
+      //})
 
     }
   }
