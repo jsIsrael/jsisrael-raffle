@@ -1,0 +1,12 @@
+language: node_js
+node_js:
+- '0.10'
+before_script:
+- npm install -g bower gulp
+- bower install
+- npm install
+script: gulp build
+after_success: ./deploy.sh
+env:
+  global:
+    secure: P8L9qjDSNukfmXtEKEwFh8oVmrsSk6hGWPiRp/ta9mSX+08zdbly4CImRwWB/pBA5NNgtVH6UP4bsYInQf+7opngj1Ypo4Iomthg1L34tV82FauBb3acTM5+S+2GXa0BJg0vu50F5b8KokHLxdI317gbQeuALUFGeFf94L6F3TutZ1jnWc5Sy+QmbzVHVqZplwfDTqEnUkAwh/e6Ir6pk4Lb0ud8DV6gHqYdMvggqeV/MYoekE1AJvnU+e053wi96sheOKOQt+XW3IzHSq6QtuMajpdgdiOt9X27iGiMz7Lgb2sApYkT2CacDHkFjxgA1FoFVG3GBDMZJO5oLX1O93b4qbbPz79H3FIYtijcVXhdlsTaFAFtRc01EgDBuv/0eURFQ5XDdhk9HkPb3OMaoDAtXYq+NtPz6loLsBqvmNA27fqiIHSQDQa5+P9AuVM7+3Y4E/SUpVhe7Qqgxx5rY5BV+WqogSZIvqc74MVJELCex8jONSeI/ZONs80TnZt5fN2eKYtWJyZpfoMA7/8lKSBSggyrF05hQ5RCYgqgQ6P+ZwI7tlV/4Bw/y+HdzTqosSs4+bXw7Y/CROoL22zOnLWCZSyw6xqLKMJlSFrYyze7tlzbWgQw5LAWAaMoWmjLSxNKIvxhX1D8lctk7oY+f6UJiZ1Njz6EDbD1OCHH688=
