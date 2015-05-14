@@ -30,7 +30,7 @@ cp $TEMP_DIRECTORY/.gitignore . || exit 1
 
 echo "Pushing new content to $ORIGIN_URL"
 git config user.name "Travis-CI" || exit 1
-git config user.email "travis@jsisrael.com" || exit 1
+git config user.email "shai@hirez.io" || exit 1
 
 git add -A . || exit 1
 git commit --allow-empty -m "Regenerated static content for $CURRENT_COMMIT after building Travis build $TRAVIS_BUILD_NUMBER" || exit 1
